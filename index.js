@@ -13,14 +13,14 @@ const corsOptions = {
     optionsSuccessStatus: 200
 };
 
-app.use(cors());
+app.use(cors(corsOptions));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 db;
 
 app.get("/", (req, res) => {
-    res.json({ message: "Real Estate Backend is running correctly!!!" });
+    res.json({ message: "Backend is running correctly!!!" });
 });
 
 app.use("/user", UserRouter);
