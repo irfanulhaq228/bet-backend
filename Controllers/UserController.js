@@ -43,7 +43,7 @@ const loginUser = async (req, res) => {
 const getAllUsers = async (req, res) => {
     try {
         const user = await userModel.find();
-        if (user.lenght === 0) {
+        if (user.length === 0) {
             return res.status(400).json({ message: "User Data is Empty" })
         }
         return res.status(200).json({ message: "Data Sent Successfully", data: user });
