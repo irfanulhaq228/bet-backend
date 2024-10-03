@@ -9,7 +9,7 @@ dotenv.config();
 const app = express();
 
 const corsOptions = {
-    origin: process.env.FRONTEND_URL || '*',
+    origin: '*',
     optionsSuccessStatus: 200
 };
 
@@ -21,6 +21,10 @@ db;
 
 app.get("/", (req, res) => {
     res.json({ message: "Backend is running correctly!!!" });
+});
+
+app.get("/test", (req, res) => {
+    res.json({ message: "Testing Successful" });
 });
 
 app.use("/user", UserRouter);
